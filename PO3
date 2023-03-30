@@ -1,0 +1,118 @@
+/*
+ * File:   inputAndOutputConfingMain.c
+ * Author: jcade041
+ *
+ * Created on March 30, 2023, 5:28 PM
+ */
+
+#define _XTAL_FREQ 8000000
+
+#include <xc.h>
+#include <pic18f4520.h>
+#include"newxc8_header.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+TRISD=0x00;
+int room1 = 0b00001001;
+int room2 = 0b00001010;
+
+PORTD=0;
+    while(1) {
+        
+        PORTD = room1;
+        __delay_ms(1000);
+        PORTD = room2;
+        __delay_ms(1000);
+
+
+    }
+  
+}
+
+/* TRAFFIC LIGHT TURN LIGHT 1 2 3 
+void main(){
+TRISD=0x00;
+    
+   
+    while(1) {
+        PORTDbits.RD0 =1;
+        __delay_ms(10000);
+        PORTDbits.RD0 =0;
+        PORTDbits.RD1 =1;
+        __delay_ms(3000);
+        PORTDbits.RD1 =0;
+
+        PORTDbits.RD2 =1;
+        __delay_ms(6000);
+        PORTDbits.RD2 =0;
+
+    }
+  
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* alternta 124 on qnd off
+void main() {
+    TRISD=0x00;
+    
+    int pin0 = 0b00000001;
+    int pin1 = 0b00000010;
+    int pin3 = 0b00001000;
+    int pins[3] = {pin0,pin1,pin3};
+    while(1) {
+        for (int i=0;i<3;i++) {
+            __delay_ms(1000);
+            PORTD=0;
+            PORTD = pins[i];
+           __delay_ms(1000);
+
+        }
+    }
+  
+  
+   
+    }*/
+/*
+ * 1 second delay 5 times
+ void main() {
+    TRISD=0x00;
+    int counter = 0;
+    while(1) {
+        if (counter<6){
+          PORTD=0x01;
+         __delay_ms(1000);
+        PORTD=0x00;
+        __delay_ms(1000);
+        counter+=1;
+        }
+        else {
+        }
+    }
+  
+  
+   
+    }
+ */
+
